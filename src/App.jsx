@@ -1,22 +1,22 @@
 import React, { Component } from "react";
+import GreetingInput from "./GreetingInput";
+import GreetingOutput from "./GreetingOutput";
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     planet: 'uranus'
-  //   }
-  // }
   state = {
     planet: "venus",
   };
+  renderGreeting(event) {
+    this.setState({ planet: event.target.value });
+  }
   render() {
     // const planet = "mars"
-    const { planet } = this.state;
+    // const { planet } = this.state;
     return (
-      <div>
-        <h1>Hello {planet} from a class Component</h1>
-      </div>
+      <>
+        <GreetingOutput planet={this.state.planet} />
+        <GreetingInput renderGreeting={this.renderGreeting.bind(this)} />
+      </>
     );
   }
 }
