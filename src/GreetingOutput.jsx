@@ -3,7 +3,7 @@ import React from 'react'
 const GreetingOutput = (props) => {
   return (
     <>
-      <h1>Hello {props.planet} from a class Component</h1>
+      <h1 data-cy="greeting"> Hello {props.planet.name} from a functional component</h1>
     </>
   )
 }
